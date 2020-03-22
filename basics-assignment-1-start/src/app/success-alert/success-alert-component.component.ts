@@ -6,8 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./success-alert-component.component.css']
 })
 export class SuccessAlertComponentComponent implements OnInit {
+  message: String = 'Success!';
 
   constructor() { }
+
+  getMessage(): String {
+    return this.message;
+  }
 
   ngOnInit(): void {
   }

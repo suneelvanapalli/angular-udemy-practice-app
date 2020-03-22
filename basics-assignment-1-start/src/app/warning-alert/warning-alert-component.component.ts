@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./warning-alert-component.component.css']
 })
 export class WarningAlertComponentComponent implements OnInit {
-
+  message: String = 'Warning!';
   constructor() { }
 
   ngOnInit(): void {
