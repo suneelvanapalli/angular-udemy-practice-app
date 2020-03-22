@@ -5,8 +5,8 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ServerComponent } from './server/server.component';
-import { WarningAlertComponentComponent } from './warning-alert-component/warning-alert-component.component';
-import { SuccessAlertComponentComponent } from './success-alert-component/success-alert-component.component';
+import { WarningAlertComponentComponent } from './warning-alert/warning-alert-component.component';
+import { SuccessAlertComponentComponent } from './success-alert/success-alert-component.component';
 
 @NgModule({
   declarations: [
