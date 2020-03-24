@@ -1,22 +1,16 @@
 
 
 <div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <ol>
-        <li>Create two new Components (manually or with CLI): WarningAlert and SuccessAlert</li>
-        <li>Output them beneath each other in the AppComponent</li>
-        <li>Output a warning or success message in the Components</li>
-        <li>Style the Components appropriately (maybe some red/ green text?)</li>
-      </ol>
-      <p>Use external or internal templates and styles!</p>
-      <p>Feel free to create more components, nest them into each other or play around with different types of selectors!</p>
+  <div class="panel">
+    
+    <button class="btn btn-primary" [disabled]="!allowNew" (click)="onAddNewClick($event)">Add New!</button>
+    <div class="alert">
+      {{message}}
     </div>
-  </div>
-</div>
 
-<div>
-  <app-success-alert-component></app-success-alert-component>
-
-  <app-warning-alert-component></app-warning-alert-component>
+    <input type="text" (input)="onTextChangeEvent($event)" />
+    {{serverName}}
+    <app-success-alert-component></app-success-alert-component>  
+    <app-warning-alert-component></app-warning-alert-component>
+  </div> 
 </div>
