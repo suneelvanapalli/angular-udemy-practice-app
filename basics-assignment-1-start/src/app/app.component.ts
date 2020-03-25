@@ -9,7 +9,10 @@ export class AppComponent {
   allowNew = true;
   message: string;
   serverName: string;
+  IsServerCreated: boolean;
   constructor() {
+    this.IsServerCreated  = false;
+    this.message = 'Server is not created';
     setTimeout(() => {
       this.allowNew = true;
     }, 2000);
@@ -18,7 +21,8 @@ export class AppComponent {
 
   onAddNewClick = (elem) => {
     console.log(elem);
-    this.message = 'Server name is creaated ' + this.serverName;
+    this.IsServerCreated = true;
+    this.message = 'Server name is created: ' + this.serverName;
   }
 
   onTextChangeEvent = ($elem:Event) => {

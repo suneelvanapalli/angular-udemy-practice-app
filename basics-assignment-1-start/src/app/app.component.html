@@ -2,14 +2,15 @@
 
 <div class="container">
   <div class="panel">
-    
-    <button class="btn btn-primary" [disabled]="!allowNew" (click)="onAddNewClick($event)">Add New!</button>
-    <div class="alert">
-      {{message}}
+    <div class="row" *ngIf="IsServerCreated" >
+     <p class="alert alert-success">{{message}}</p> 
     </div>
+    <div class="row">
+      <button class="btn btn-primary" [disabled]="!allowNew" (click)="onAddNewClick($event)">Add New!</button>
+    </div>
+    
 <!-- 
     <input type="text" (input)="onTextChangeEvent($event)" /> -->
-
     <input type="text" [(ngModel)]="serverName" />
     {{serverName}}
     <app-success-alert-component></app-success-alert-component>  
