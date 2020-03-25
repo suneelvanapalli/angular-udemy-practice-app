@@ -2,9 +2,12 @@
 
 <div class="container">
   <div class="panel">
-    <div class="row" *ngIf="IsServerCreated" >
+    <div class="row" *ngIf="IsServerCreated; else noServer" >
      <p class="alert alert-success">{{message}}</p> 
     </div>
+    <ng-template #noServer>
+      <p class="alert alert-warning">{{message}}</p> 
+     </ng-template>
     <div class="row">
       <button class="btn btn-primary" [disabled]="!allowNew" (click)="onAddNewClick($event)">Add New!</button>
     </div>
