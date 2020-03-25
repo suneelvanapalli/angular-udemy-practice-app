@@ -1,0 +1,8 @@
+<h3>Assignment 2</h3>
+<div class="panel">
+    <input type="text" [(ngModel)]="username" />
+    <br />
+    {{username}}
+    <br />
+    <button class="btn btn=-primary" [disabled]="!IsEnabled()" (click)="username=''"> Reset</button>
+</div>

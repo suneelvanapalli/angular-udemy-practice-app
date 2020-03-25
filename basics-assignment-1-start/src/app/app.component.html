@@ -7,10 +7,14 @@
     <div class="alert">
       {{message}}
     </div>
+<!-- 
+    <input type="text" (input)="onTextChangeEvent($event)" /> -->
 
-    <input type="text" (input)="onTextChangeEvent($event)" />
+    <input type="text" [(ngModel)]="serverName" />
     {{serverName}}
     <app-success-alert-component></app-success-alert-component>  
     <app-warning-alert-component></app-warning-alert-component>
   </div> 
+
+  <app-assignment2></app-assignment2>
 </div>

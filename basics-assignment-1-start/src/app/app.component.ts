@@ -15,9 +15,10 @@ export class AppComponent {
     }, 2000);
   }
 
+
   onAddNewClick = (elem) => {
     console.log(elem);
-    this.message = 'Button clicked';
+    this.message = 'Server name is creaated ' + this.serverName;
   }
 
   onTextChangeEvent = ($elem:Event) => {
