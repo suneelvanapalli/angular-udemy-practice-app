@@ -1,0 +1,15 @@
+<h3>Assignment 3</h3>
+
+<button class="btn btn-primary" (click)="onToggleClick()">
+  Display details
+</button>
+
+<div *ngIf="IsDetailsDisplayed">
+  Secret Password = Tuna
+</div>
+
+<div *ngFor="let item of log; index as i">
+
+  <p [ngStyle]="{'background-color' : i > 4 ? 'lightblue' : '' }" [ngClass]="{'index5' : i > 4}">
+    {{i}} {{item}}</p>
+</div>
