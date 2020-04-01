@@ -1,28 +1,11 @@
 <div class="container">
-  <div class="panel">
-    <div class="row" *ngIf="IsServerCreated; else noServer">
-      <p class="alert alert-success">{{message}}</p>
-    </div>
-    <ng-template #noServer>
-      <p class="alert alert-warning" [ngStyle]="{'background-color':'blue'}">{{message}}</p>
-    </ng-template>
-    <div class="row">
-      <button class="btn btn-primary" [disabled]="!allowNew" (click)="onAddNewClick(newServerName)">Add New!</button>
-    </div>
-
-    <!-- 
-    <input type="text" (input)="onTextChangeEvent($event)" /> -->
-    <input type="text" [(ngModel)]="serverName" #newServerName/>
-    {{serverName}}
-
-    <app-success-alert-component [message]="successMessage" >
-
-    </app-success-alert-component>
-    <app-warning-alert-component></app-warning-alert-component>
-  </div>
-
+  
+  <app-assignment1></app-assignment1>
+  
   <app-assignment2></app-assignment2>
 
   <app-assignment3></app-assignment3>
+
+  <app-assignment4></app-assignment4>
 
 </div>
