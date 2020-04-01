@@ -8,21 +8,21 @@ import { Component } from '@angular/core';
 export class AppComponent {
   allowNew = true;
   message: string;
+  successMessage: string = 'Success!';
   serverName: string;
   IsServerCreated: boolean;
   constructor() {
     this.IsServerCreated  = false;
-    this.message = 'Server is not created';
+    this.message = 'Server is not created!';
     setTimeout(() => {
       this.allowNew = true;
     }, 2000);
   }
 
 
-  onAddNewClick = (elem) => {
-    console.log(elem);
+  onAddNewClick = (inputEle: HTMLInputElement) => {
     this.IsServerCreated = true;
-    this.message = 'Server name is created: ' + this.serverName;
+    this.message = 'Server name is created: ' + inputEle.value;
   }
 
   onTextChangeEvent = ($elem:Event) => {
