@@ -3,6 +3,16 @@
       <h3 class="panel-title">Assignment 4</h3>
     </div>
     <div class="panel-body">
-      Panel content
+      <app-game-control (startClicked)="startClicked($event)" (stopClicked)="stopClicked($event)"></app-game-control>
+
+      <div *ngFor="let index of numbersList">
+          <app-even *ngIf="index % 2 === 0 ">
+
+          </app-even>
+
+          <app-odd *ngIf="index % 2 !== 0 ">
+            
+          </app-odd>
+      </div>
     </div>
   </div>

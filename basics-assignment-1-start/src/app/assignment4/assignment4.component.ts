@@ -6,10 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./assignment4.component.css']
 })
 export class Assignment4Component implements OnInit {
+  numbersList: number[] = [];
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  startClicked(input: { count: number }) {
+      this.numbersList.push(input.count);
+  }
+
+
+  stopClicked(input: { count: number }) {
+    console.log(input);
   }
 
 }
