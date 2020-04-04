@@ -8,8 +8,8 @@ import { Ingredient } from 'src/app/shared/ingredient.model';
 })
 export class ShoppingListEditComponent implements OnInit {
   @Output() addClickedEvent: EventEmitter<Ingredient> = new EventEmitter<Ingredient>();
-  @ViewChild('nameInput') nameInput: ElementRef;
-  @ViewChild('amountInput') amountInput: ElementRef;
+  @ViewChild('nameInput', {static: false} ) nameInput: ElementRef;
+  @ViewChild('amountInput', {static: false}) amountInput: ElementRef;
 
   constructor() { }
 
