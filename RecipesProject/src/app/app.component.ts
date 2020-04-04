@@ -7,4 +7,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'RecipesProject';
+  showRecipesMenu: boolean;
+  showShoppingList: boolean;
+
+  onDisplaySectionSelected = (displaySection) => {
+      if (displaySection === 'recipes') {
+          this.showRecipesMenu = true;
+          this.showShoppingList = false;
+      }
+      if (displaySection === 'shoppinglist') {
+        this.showShoppingList = true;
+        this.showRecipesMenu = false;
+    }
+  }
 }
