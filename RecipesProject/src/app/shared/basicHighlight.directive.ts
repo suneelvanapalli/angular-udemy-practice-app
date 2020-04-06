@@ -1,5 +1,4 @@
 import { Directive, OnInit, ElementRef, Renderer2, HostListener, HostBinding } from '@angular/core';
-import { EventEmitter } from 'protractor';
 
 @Directive({
     selector: '[appBasicHighlight]'
