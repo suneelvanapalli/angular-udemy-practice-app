@@ -15,7 +15,7 @@ export class BasicHighlightDirective implements OnInit {
     }
 
     @HostListener('mouseenter') mouseover(eventData: Event) {
-        //this.renderer.setStyle(this.element.nativeElement, 'backgroundColor', 'blue');
+        // this.renderer.setStyle(this.element.nativeElement, 'backgroundColor', 'blue');
         this.backgroundColor = 'blue';
     }
 

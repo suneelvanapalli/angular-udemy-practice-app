@@ -1,16 +1,24 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <app-header (displaySection)="onDisplaySectionSelected($event)"></app-header>
+      <app-header
+        (displaySection)="onDisplaySectionSelected($event)"
+      ></app-header>
     </div>
     <div class="col-xs-12" *ngIf="showRecipesMenu === true">
-      <app-recipes></app-recipes>      
+      <app-recipes></app-recipes>
     </div>
     <div class="col-xs-12" *ngIf="showShoppingList === true">
       <app-shopping-list></app-shopping-list>
-    </div>    
+    </div>
   </div>
 </div>
 <div>
   <p appBasicHighlight>test</p>
+  <button class="btn btn-primary" (click)="onToggleClick()">
+    Toggle condition
+  </button>
+  <div *appUnless="display">
+    structural directive demo
+  </div>
 </div>
