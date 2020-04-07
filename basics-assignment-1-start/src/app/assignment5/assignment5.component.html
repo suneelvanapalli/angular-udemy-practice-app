@@ -1,0 +1,24 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Assignment 5</h3>
+    </div>
+    <div class="panel-body">
+    
+  <div class="container">
+      <p>Active Users</p>
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let user of activeUsers" >{{user}} 
+            <!-- <button class="btn btn-primary" ><Set InActive/button>  -->
+                <span class="badge badge-primary badge-pill" (click)="onSetInActiveClick(user)">InActive</span>
+        </li>
+      </ul>
+      <p>In-Active Users</p>
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let user of InActiveUsers">{{user}}
+            <span class="badge badge-primary badge-pill" (click)="onSetActiveClick(user)">Active</span>
+            <!-- <button class="btn btn-primary" (click)="onSetInActiveClick(user)">Set Active</button>  -->
+        </li>
+      </ul>
+  </div>
+  </div>
+    

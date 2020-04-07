@@ -14,6 +14,7 @@ import { GameControlComponent } from './assignment4/game-control/game-control.co
 import { OddComponent } from './assignment4/odd/odd.component';
 import { EvenComponent } from './assignment4/even/even.component';
 import { Assignment1Component } from './assignment1/assignment1.component';
+import { Assignment5Component } from './assignment5/assignment5.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { Assignment1Component } from './assignment1/assignment1.component';
     GameControlComponent,
     OddComponent,
     EvenComponent,
-    Assignment1Component
+    Assignment1Component,
+    Assignment5Component
   ],
   imports: [
     BrowserModule,
