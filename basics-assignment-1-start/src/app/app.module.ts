@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-
 import { AppComponent } from './app.component';
 import { ServerComponent } from './server/server.component';
 import { WarningAlertComponentComponent } from './warning-alert/warning-alert-component.component';
@@ -15,6 +14,8 @@ import { OddComponent } from './assignment4/odd/odd.component';
 import { EvenComponent } from './assignment4/even/even.component';
 import { Assignment1Component } from './assignment1/assignment1.component';
 import { Assignment5Component } from './assignment5/assignment5.component';
+import { ActivateService } from './Shared/activateService';
+import { CounterService } from './Shared/counterService';
 
 @NgModule({
   declarations: [
@@ -29,13 +30,10 @@ import { Assignment5Component } from './assignment5/assignment5.component';
     OddComponent,
     EvenComponent,
     Assignment1Component,
-    Assignment5Component
+    Assignment5Component,
   ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-  ],
+  imports: [BrowserModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
