@@ -15,7 +15,8 @@ export class ActivateService {
 
   constructor(private counterService: CounterService) {}
 
-  toggleStatus = (id: number) => {
-    this.users[id].IsActive = !this.users[id].IsActive;
+  toggleStatus = (user: string) => {
+    const selectedUser = this.users.find((u) => u.name === user);
+    selectedUser.IsActive = !selectedUser.IsActive;
   };
 }

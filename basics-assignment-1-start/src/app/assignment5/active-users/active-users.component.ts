@@ -18,7 +18,7 @@ export class ActiveUsersComponent   {
     );
   }
 
-  toggleStatus = (id: number) => {
-    this.activateService.toggleStatus(id);
+  toggleStatus = (user: string) => {
+    this.activateService.toggleStatus(user);
   };
 }
