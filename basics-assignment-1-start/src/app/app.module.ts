@@ -16,6 +16,8 @@ import { Assignment1Component } from './assignment1/assignment1.component';
 import { Assignment5Component } from './assignment5/assignment5.component';
 import { ActivateService } from './Shared/activateService';
 import { CounterService } from './Shared/counterService';
+import { ActiveUsersComponent } from './assignment5/active-users/active-users.component';
+import { InactiveUsersComponent } from './assignment5/inactive-users/inactive-users.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { CounterService } from './Shared/counterService';
     EvenComponent,
     Assignment1Component,
     Assignment5Component,
+    ActiveUsersComponent,
+    InactiveUsersComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
