@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import { ActivateService } from './Shared/activateService';
+import { CounterService } from './Shared/counterService';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [ActivateService, CounterService]
 })
 export class AppComponent {
   allowNew = true;

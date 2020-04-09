@@ -1,0 +1,12 @@
+<p>In-Active Users</p>
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let user of getUsers(); let i = index">
+    {{ user.name }}
+    <span
+      class="badge badge-primary badge-pill"
+      (click)="toggleStatus(i)"
+      >Active</span
+    >
+    <!-- <button class="btn btn-primary" (click)="onSetInActiveClick(user)">Set Active</button>  -->
+  </li>
+</ul>

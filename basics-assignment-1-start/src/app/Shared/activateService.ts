@@ -1,23 +1,21 @@
-import { Injectable, EventEmitter } from '@angular/core';
-import { CounterService } from './counterService';
+import { Injectable, EventEmitter } from "@angular/core";
+import { CounterService } from "./counterService";
+import { User } from "./user";
 
 @Injectable()
 export class ActivateService {
-  public activeUsers: string[] = ['Tom', 'Steve', 'Smith'];
-  public InActiveUsers: string[] = ['Harry', 'Ricky', 'Jason'];
+  users: User[] = [
+    new User("Tom", true),
+    new User("Steve", true),
+    new User("Smith", true),
+    new User("Harry", false),
+    new User("Ricky", false),
+    new User("Jason", false),
+  ];
 
   constructor(private counterService: CounterService) {}
 
-  setStatusToActive(user: string) {
-    this.counterService.setCounter();
-    this.activeUsers.push(user);
-    this.InActiveUsers.splice(this.InActiveUsers.indexOf(user), 1);
-  }
-  setStatusToInActive(user: string) {
-    this.counterService.setCounter();
-    this.InActiveUsers.push(user);
-    this.activeUsers.splice(this.InActiveUsers.indexOf(user), 1);
-  }
-
-
+  toggleStatus = (id: number) => {
+    this.users[id].IsActive = !this.users[id].IsActive;
+  };
 }
