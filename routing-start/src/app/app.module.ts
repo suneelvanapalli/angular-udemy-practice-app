@@ -14,8 +14,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { from } from 'rxjs';
 
 const appRoutes: Routes = [
-  { path: '', component: UsersComponent },
+  { path: '', component: HomeComponent },
   { path: 'users', component: UsersComponent },
+  { path: 'users/:id/:name', component: UserComponent },
   { path: 'servers', component: ServersComponent }
 ];
 
