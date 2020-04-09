@@ -18,5 +18,6 @@ export class ActivateService {
   toggleStatus = (user: string) => {
     const selectedUser = this.users.find((u) => u.name === user);
     selectedUser.IsActive = !selectedUser.IsActive;
+    this.counterService.incrementCounter(selectedUser.IsActive);
   };
 }
