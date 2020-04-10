@@ -1,5 +1,5 @@
 export class AuthService {
-  loggedIn = false;
+  private loggedIn = false;
 
   isAuthenticated(): Promise<any> {
     const promise = new Promise((resolve, reject) => {
