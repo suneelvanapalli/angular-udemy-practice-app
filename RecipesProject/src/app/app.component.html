@@ -5,12 +5,13 @@
         (displaySection)="onDisplaySectionSelected($event)"
       ></app-header>
     </div>
-    <div class="col-xs-12" *ngIf="showRecipesMenu === true">
-      <app-recipes></app-recipes>
+    <div class="col-xs-12" >
+      <!-- <app-recipes></app-recipes> -->
+      <router-outlet></router-outlet>
     </div>
-    <div class="col-xs-12" *ngIf="showShoppingList === true">
+    <!-- <div class="col-xs-12" *ngIf="showShoppingList === true">
       <app-shopping-list></app-shopping-list>
-    </div>
+    </div> -->
   </div>
 </div>
 <div>

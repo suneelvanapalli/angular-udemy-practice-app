@@ -13,12 +13,12 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
-  onDisplayRecipesClick = () => {
-    this.displaySection.emit('recipes');
-  }
+  // onDisplayRecipesClick = () => {
+  //   this.displaySection.emit('recipes');
+  // }
 
-  onDisplayShoppingListClick = () => {
-    this.displaySection.emit('shoppinglist');
-  }
+  // onDisplayShoppingListClick = () => {
+  //   this.displaySection.emit('shoppinglist');
+  // }
 
 }
