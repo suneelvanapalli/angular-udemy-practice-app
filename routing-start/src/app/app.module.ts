@@ -16,6 +16,7 @@ import { AuthService } from './auth-service';
 import { AuthGuard } from './auth-guard.service';
 import { CanDeactivateGuard } from './servers/edit-server/can-deactivate-guard.service';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { ServerResolve } from './servers/edit-server/server-resolve.service';
 
 // tslint:disable-next-line:max-line-length
 // In our example, we didn't encounter any issues when we tried to redirect the user. But that's not always the case when adding redirections.
@@ -38,7 +39,7 @@ import { ErrorPageComponent } from './error-page/error-page.component';
     ErrorPageComponent,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule],
-  providers: [ServersService, AuthService, AuthGuard, CanDeactivateGuard],
+  providers: [ServersService, AuthService, AuthGuard, CanDeactivateGuard, ServerResolve],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -11,6 +11,7 @@ import { AuthGuard } from './auth-guard.service';
 import { AuthService } from './auth-service';
 import { CanDeactivateGuard } from './servers/edit-server/can-deactivate-guard.service';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { ServerResolve } from './servers/edit-server/server-resolve.service';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -30,6 +31,7 @@ const appRoutes: Routes = [
         path: ':id/edit',
         component: EditServerComponent,
         canDeactivate: [CanDeactivateGuard],
+        resolve: { server: ServerResolve },
       },
     ],
   },

@@ -9,6 +9,7 @@ import {
 } from '@angular/router';
 import { CanComponentDeactivate } from './can-deactivate-guard.service';
 import { Observable } from 'rxjs';
+import { Server } from './server-resolve.service';
 
 @Component({
   selector: 'app-edit-server',
@@ -51,7 +52,10 @@ export class EditServerComponent implements OnInit, CanComponentDeactivate {
     this.route.queryParams.subscribe((params: Params) => {
       this.allowEdit = params['allowEdit'] === '1' ? true : false;
     });
-    this.server = this.serversService.getServer(1);
+    // this.server = this.serversService.getServer(1);
+    this.route.data.subscribe((data: { server: Server }) => {
+      this.server = data.server;
+    });
     this.serverName = this.server.name;
     this.serverStatus = this.server.status;
   }
