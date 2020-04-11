@@ -15,6 +15,7 @@ import { DropdownDirective } from './shared/dropdown.directive';
 import { AppRoutingModule } from './app-routing.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ShoppingListService } from './shopping-list/shoppinglist.service';
+import { RecipeService } from './recipes/recipe.service';
 
 @NgModule({
   declarations: [
@@ -29,12 +30,10 @@ import { ShoppingListService } from './shopping-list/shoppinglist.service';
     BasicHighlightDirective,
     UnlessDirective,
     DropdownDirective,
-    PageNotFoundComponent
+    PageNotFoundComponent,
   ],
-  imports: [
-    BrowserModule, AppRoutingModule
-  ],
-  providers: [ShoppingListService],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, AppRoutingModule],
+  providers: [ShoppingListService, RecipeService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

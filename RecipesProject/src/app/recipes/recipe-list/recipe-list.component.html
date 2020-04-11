@@ -5,7 +5,7 @@
 </div>
 <div class="row">
     <div class="col-xs-12">
-        <a  class="list-group-item clearfix" *ngFor="let recipeItem of recipes">
+        <a  style="cursor: pointer;"  class="list-group-item clearfix" *ngFor="let recipeItem of recipes">
            <app-recipe-item  [recipeItem]="recipeItem" (click)="onRecipeItemClick(recipeItem)">
 
            </app-recipe-item>
