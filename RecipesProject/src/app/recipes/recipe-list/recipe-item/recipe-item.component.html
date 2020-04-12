@@ -1,4 +1,4 @@
-<div class="row">
+<a routerLinkActive="active"   style="cursor: pointer;" [routerLink]="[index]"  class="list-group-item clearfix" >
     <div class="pull-left">
         <h4 class="list-group-item-heading">
             {{recipeItem.name}}
@@ -8,4 +8,4 @@
     <span class="pull-right">
         <img [src]="recipeItem.imagePath" alt="{{recipeItem.name}}" class="img-responsive" style="max-height:50px;" />
     </span>
-</div>
+</a>

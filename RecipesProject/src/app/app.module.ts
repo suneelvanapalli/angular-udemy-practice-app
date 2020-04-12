@@ -16,6 +16,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ShoppingListService } from './shopping-list/shoppinglist.service';
 import { RecipeService } from './recipes/recipe.service';
+import { RecipesEditComponent } from './recipes/recipes-edit/recipes-edit.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { RecipeService } from './recipes/recipe.service';
     UnlessDirective,
     DropdownDirective,
     PageNotFoundComponent,
+    RecipesEditComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [ShoppingListService, RecipeService],
