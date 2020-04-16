@@ -9,13 +9,32 @@ import { NgForm } from "@angular/forms";
 export class AppComponent implements OnInit {
   @ViewChild("f", { static: false }) signupForm: NgForm;
   defaultQuestion: string;
-
-  ngOnInit(): void {
-    this.defaultQuestion = "teacher";
-  }
+  genders = ["male", "female"];
+  user =  {
+    username: '',
+    email: '',
+    secretquestion: '',
+    answer: '',
+    gender : ''
+  };
+  submitted = false;
+  ngOnInit(): void {}
 
   suggestUserName() {
     const suggestedName = "Superuser";
+    this.defaultQuestion = "teacher";
+    
+    // this.signupForm.setValue({
+    //   userData: {
+    //     username: "suneel",
+    //     email: "suneel@test@test.com",
+    //   },
+    //   secret: "pet",
+    //   gender: "male",
+    //   questionanswer: 'test'
+    // });
+
+    this.signupForm.form.patchValue({ userData: { username: "test" } });
   }
 
   // onSubmit(form: NgForm) {
@@ -23,6 +42,13 @@ export class AppComponent implements OnInit {
   // }
 
   onSubmit() {
-    console.log(this.signupForm);
+    this.user.username = this.signupForm.value.userData.username;
+    this.user.email = this.signupForm.value.userData.email;
+    this.user.secretquestion = this.signupForm.value.secret;
+    this.user.answer = this.signupForm.value.questionanswer;
+    this.user.gender = this.signupForm.value.gender;
+
+    this.submitted = true;
+    this.signupForm.reset();
   }
 }
