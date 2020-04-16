@@ -18,6 +18,7 @@ import { ActivateService } from './Shared/activateService';
 import { CounterService } from './Shared/counterService';
 import { ActiveUsersComponent } from './assignment5/active-users/active-users.component';
 import { InactiveUsersComponent } from './assignment5/inactive-users/inactive-users.component';
+import { Assignment6Component } from './assignment6/assignment6.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { InactiveUsersComponent } from './assignment5/inactive-users/inactive-us
     Assignment5Component,
     ActiveUsersComponent,
     InactiveUsersComponent,
+    Assignment6Component,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
