@@ -1,35 +1,45 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { map } from "rxjs/operators";
+import { post as Post } from "./post.model";
+import { PostsDataService } from "./posts-data.service";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"],
 })
 export class AppComponent implements OnInit {
-  loadedPosts = [];
+  loadedPosts: Post[] = [];
+  isFetching: boolean;
+  constructor(private dataService: PostsDataService) {}
 
-  constructor(private http: HttpClient) {}
+  ngOnInit() {
+    this.onFetchPosts();
+  }
 
-  ngOnInit() {}
-
-  onCreatePost(postData: { title: string; content: string }) {
+  onCreatePost(postData: Post) {
     // Send Http request
-    this.http
-      .post(
-        'https://ng-complete-guide-c56d3.firebaseio.com/posts.json',
-        postData
-      )
-      .subscribe(responseData => {
-        console.log(responseData);
-      });
+    this.dataService.createPost(postData).subscribe((responseData) => {
+      console.log(responseData);
+    });
   }
 
   onFetchPosts() {
-    // Send Http request
+    this.isFetching = true;
+    this.dataService
+    .getPosts()
+    .subscribe((posts) => {
+      this.loadedPosts = posts;
+      console.log(posts);
+      this.isFetching = false;
+    });
   }
 
   onClearPosts() {
-    // Send Http request
+    this.dataService.deletePosts().subscribe((responseData) => {
+        console.log(responseData);
+        alert('posts deleted');
+    })
   }
 }
