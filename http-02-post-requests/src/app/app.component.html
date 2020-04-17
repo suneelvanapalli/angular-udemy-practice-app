@@ -30,9 +30,13 @@
   </div>
   <div class="row">
     <div class="col-xs-12 col-md-6 col-md-offset-3">
-      <p *ngIf="isFetching;else content">Loading..</p>
+      <p *ngIf="isFetching && !error;else content">Loading..</p>
+      <div class="alert alert-danger" *ngIf="error">
+        <h3>Error occured</h3>
+        <p>Message: {{error}}</p>
+      </div>
       <ng-template #content>
-        <p *ngIf="loadedPosts.length==0">No posts available!</p>
+        <p *ngIf="loadedPosts.length==0 && !error">No posts available!</p>
         <ul class="list-group">
           <li class="list-group-item" *ngFor="let post of loadedPosts">
             <h3>{{post.title}}</h3>

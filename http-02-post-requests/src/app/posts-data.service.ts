@@ -1,13 +1,14 @@
 import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { map } from "rxjs/operators";
 import { post as Post } from "./post.model";
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: "root",
 })
 export class PostsDataService {
+  errorOccured: Subject<string> = new Subject<string>();
   constructor(private http: HttpClient) {}
 
   createPost(postData: Post) {
@@ -15,7 +16,11 @@ export class PostsDataService {
     return this.http.post<{ name: string }>(
       "https://ng-udemy-practice-app.firebaseio.com/posts.json",
       postData
-    );
+    ).subscribe((responseData) => {
+      console.log(responseData);
+    }, (error: HttpErrorResponse) => {
+        this.errorOccured.next(error.message);
+    });
   }
 
   getPosts(): Observable<Post[]> {
