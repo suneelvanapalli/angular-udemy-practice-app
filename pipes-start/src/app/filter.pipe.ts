@@ -3,6 +3,7 @@ import { isNgTemplate } from "@angular/compiler";
 
 @Pipe({
   name: "filter",
+  pure: false
 })
 export class FilterPipe implements PipeTransform {
   transform(value: any, filteredString: string, propName: string): any {
