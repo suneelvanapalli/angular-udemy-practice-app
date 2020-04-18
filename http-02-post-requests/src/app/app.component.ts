@@ -14,12 +14,13 @@ export class AppComponent implements OnInit, OnDestroy {
   loadedPosts: Post[] = [];
   isFetching: boolean;
   error: string;
-  errorSubscribe: Observable;
+  errorSubscribe: Subscription;
   constructor(private dataService: PostsDataService) {}
 
   ngOnInit() {
     this.onFetchPosts();
-    this.errorSubscribe =  this.dataService.errorOccured.subscribe((error) => {
+    this.errorSubscribe = this.dataService.errorOccured.subscribe((error) => {
+      this.isFetching = false;
       this.error = error;
     });
   }
