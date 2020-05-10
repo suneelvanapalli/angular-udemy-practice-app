@@ -5,10 +5,7 @@ import { Subscription } from 'rxjs';
 
 @Injectable()
 export class ShoppingListService {
-  ingredientChanged: Subject<Ingredient[]> = new EventEmitter<
-    Ingredient[]
-    >();
-  
+  ingredientChanged: Subject<Ingredient[]> = new EventEmitter<Ingredient[]>();
 
   private ingredients: Ingredient[] = [
     new Ingredient('Apples', 100),

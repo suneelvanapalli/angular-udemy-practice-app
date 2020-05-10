@@ -2,7 +2,7 @@
     <div class="col-md-10">
         <app-shopping-list-edit ></app-shopping-list-edit>
         <hr>
-    <ul class="list-group" *ngFor="let ingredient of ingredients">
+    <ul class="list-group" *ngFor="let ingredient of (ingredients | async).ingredients">
         <a class="list-group-item" style="cursor: pointer;">
             {{ingredient.name}} ({{ingredient.amount}})
         </a>

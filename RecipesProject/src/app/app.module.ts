@@ -17,6 +17,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { ShoppingListService } from './shopping-list/shoppinglist.service';
 import { RecipeService } from './recipes/recipe.service';
 import { RecipesEditComponent } from './recipes/recipes-edit/recipes-edit.component';
+import { StoreModule } from '@ngrx/store';
+import { shoppingListReducer } from './shopping-list/store/reducers/shopping-list.reducer';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,7 @@ import { RecipesEditComponent } from './recipes/recipes-edit/recipes-edit.compon
     PageNotFoundComponent,
     RecipesEditComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, StoreModule.forRoot({ shoppingList: shoppingListReducer })],
   providers: [ShoppingListService, RecipeService],
   bootstrap: [AppComponent],
 })
